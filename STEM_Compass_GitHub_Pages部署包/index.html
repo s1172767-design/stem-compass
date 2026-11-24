@@ -1,0 +1,800 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="STEM Compass：中学生 STEM 能力发展与学习导航平台，INT6143 课程研究原型。"
+    />
+    <title>STEM Compass · 中学生STEM能力发展与学习导航平台</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
+    <svg class="svg-sprite" aria-hidden="true">
+      <symbol id="i-overview" viewBox="0 0 24 24">
+        <path d="M3 10.5 12 3l9 7.5V21H3V10.5Z" />
+        <path d="M9 21v-7h6v7" />
+      </symbol>
+      <symbol id="i-data" viewBox="0 0 24 24">
+        <ellipse cx="12" cy="5" rx="8" ry="3" />
+        <path d="M4 5v7c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 12v7c0 1.7 3.6 3 8 3s8-1.3 8-3v-7" />
+      </symbol>
+      <symbol id="i-profile" viewBox="0 0 24 24">
+        <circle cx="12" cy="8" r="4" />
+        <path d="M4 21c.7-4.5 3.5-7 8-7s7.3 2.5 8 7" />
+        <path d="m17.5 14 1 1 2-2" />
+      </symbol>
+      <symbol id="i-lab" viewBox="0 0 24 24">
+        <path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 1.8 3h10.4a2 2 0 0 0 1.8-3l-5-9V3" />
+        <path d="M7.5 15h9" />
+      </symbol>
+      <symbol id="i-learning" viewBox="0 0 24 24">
+        <path d="m3 8 9-5 9 5-9 5-9-5Z" />
+        <path d="M6 10.5V16l6 4 6-4v-5.5M21 8v7" />
+      </symbol>
+      <symbol id="i-career" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="9" />
+        <path d="m15.5 8.5-2 5-5 2 2-5 5-2Z" />
+      </symbol>
+      <symbol id="i-governance" viewBox="0 0 24 24">
+        <path d="M12 3 4 6v5c0 5.2 3.3 8.7 8 10 4.7-1.3 8-4.8 8-10V6l-8-3Z" />
+        <path d="m8.5 12 2.3 2.3 4.8-5" />
+      </symbol>
+      <symbol id="i-chevron" viewBox="0 0 24 24">
+        <path d="m9 18 6-6-6-6" />
+      </symbol>
+      <symbol id="i-download" viewBox="0 0 24 24">
+        <path d="M12 3v12m0 0 4-4m-4 4-4-4M4 20h16" />
+      </symbol>
+      <symbol id="i-arrow" viewBox="0 0 24 24">
+        <path d="M5 12h14m-5-5 5 5-5 5" />
+      </symbol>
+      <symbol id="i-menu" viewBox="0 0 24 24">
+        <path d="M4 6h16M4 12h16M4 18h16" />
+      </symbol>
+      <symbol id="i-info" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="9" />
+        <path d="M12 11v6M12 7.5v.1" />
+      </symbol>
+      <symbol id="i-check" viewBox="0 0 24 24">
+        <path d="m5 12 4 4L19 6" />
+      </symbol>
+      <symbol id="i-clock" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="9" />
+        <path d="M12 7v5l3 2" />
+      </symbol>
+      <symbol id="i-search" viewBox="0 0 24 24">
+        <circle cx="11" cy="11" r="7" />
+        <path d="m16 16 5 5" />
+      </symbol>
+      <symbol id="i-close" viewBox="0 0 24 24">
+        <path d="m6 6 12 12M18 6 6 18" />
+      </symbol>
+    </svg>
+
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#overview" aria-label="STEM Compass 首页">
+        <span class="brand-mark">
+          <svg viewBox="0 0 48 48" aria-hidden="true">
+            <circle cx="24" cy="24" r="19.5" fill="none" stroke="currentColor" stroke-width="2" />
+            <circle cx="24" cy="7" r="2.8" fill="currentColor" />
+            <circle cx="39.5" cy="31" r="2.8" fill="currentColor" />
+            <circle cx="8.5" cy="31" r="2.8" fill="currentColor" />
+            <path d="M24 9.5 30 22l-6 16-6-16 6-12.5Z" fill="currentColor" opacity=".22" />
+            <path d="M24 12v24M10 29l14-7 14 7" fill="none" stroke="currentColor" stroke-width="1.7" />
+            <circle cx="24" cy="22" r="3.1" fill="#06192d" stroke="currentColor" stroke-width="1.6" />
+          </svg>
+        </span>
+        <span>
+          <strong>STEM Compass</strong>
+          <small>学习发展导航平台</small>
+        </span>
+      </a>
+
+      <nav class="nav-list" aria-label="主要导航">
+        <a class="nav-item active" href="#overview" data-page="overview">
+          <span class="nav-number">01</span>
+          <svg><use href="#i-overview"></use></svg>
+          <span>平台首页<small>Overview</small></span>
+        </a>
+        <a class="nav-item" href="#data" data-page="data">
+          <span class="nav-number">02</span>
+          <svg><use href="#i-data"></use></svg>
+          <span>数据管理中心<small>Data Center</small></span>
+        </a>
+        <a class="nav-item" href="#profile" data-page="profile">
+          <span class="nav-number">03</span>
+          <svg><use href="#i-profile"></use></svg>
+          <span>STEM能力画像<small>Competency Profile</small></span>
+        </a>
+        <a class="nav-item" href="#lab" data-page="lab">
+          <span class="nav-number">04</span>
+          <svg><use href="#i-lab"></use></svg>
+          <span>数据挖掘实验室<small>Mining Lab</small></span>
+        </a>
+        <a class="nav-item" href="#learning" data-page="learning">
+          <span class="nav-number">05</span>
+          <svg><use href="#i-learning"></use></svg>
+          <span>个性化学习中心<small>Personalized Learning</small></span>
+        </a>
+        <a class="nav-item" href="#career" data-page="career">
+          <span class="nav-number">06</span>
+          <svg><use href="#i-career"></use></svg>
+          <span>STEM职业探索<small>Career Exploration</small></span>
+        </a>
+        <a class="nav-item" href="#governance" data-page="governance">
+          <span class="nav-number">07</span>
+          <svg><use href="#i-governance"></use></svg>
+          <span>教师工作台与伦理治理<small>Teacher &amp; Governance</small></span>
+        </a>
+      </nav>
+
+      <div class="sidebar-foot">
+        <span class="research-seal">INT6143</span>
+        <div>
+          <strong>研究原型 v1.0</strong>
+          <span>合成数据 · 可复现实验</span>
+        </div>
+      </div>
+    </aside>
+
+    <div class="app-shell">
+      <header class="topbar">
+        <button class="icon-button menu-button" id="menu-button" aria-label="打开导航">
+          <svg><use href="#i-menu"></use></svg>
+        </button>
+        <div class="breadcrumb">
+          <span>STEM Compass</span>
+          <svg><use href="#i-chevron"></use></svg>
+          <strong id="breadcrumb-title">平台首页</strong>
+        </div>
+        <div class="topbar-actions">
+          <label class="quick-student">
+            <span>快速切换学生</span>
+            <select id="global-student-select" aria-label="快速切换学生"></select>
+          </label>
+          <span class="sync-state" title="数据为合成模拟数据；模型结果由 Python 预计算；反馈与审核保存在当前浏览器">
+            <i></i> 模拟数据 · 预计算 · 本地存储
+          </span>
+        </div>
+      </header>
+
+      <main id="main-content">
+        <section class="page active" id="page-overview" data-page="overview">
+          <div class="hero">
+            <div class="hero-copy">
+              <p class="eyebrow">STEM-6 · EDUCATION DATA MINING</p>
+              <h1>让每一次 STEM 学习<br /><span>都有迹可循</span></h1>
+              <p class="hero-lead">
+                以六维能力画像连接数据洞察、个性化学习与职业探索，
+                为教育者提供透明、可解释的学生发展支持原型。
+              </p>
+              <div class="hero-actions">
+                <button class="button primary" data-go="profile">
+                  查看学生画像
+                  <svg><use href="#i-arrow"></use></svg>
+                </button>
+                <button class="button ghost-light" data-go="lab">
+                  进入数据挖掘实验室
+                </button>
+              </div>
+              <div class="hero-badges">
+                <span>固定随机种子 42</span>
+                <span>真实运行 4 类算法</span>
+                <span>学生级训练/测试隔离</span>
+              </div>
+            </div>
+            <div class="hero-visual">
+              <div class="hero-orbit orbit-one"></div>
+              <div class="hero-orbit orbit-two"></div>
+              <div class="compass-core">
+                <svg viewBox="0 0 180 180" aria-hidden="true">
+                  <circle cx="90" cy="90" r="72" fill="none" stroke="currentColor" opacity=".18" stroke-width="1" />
+                  <circle cx="90" cy="90" r="54" fill="none" stroke="currentColor" opacity=".25" stroke-width="1" stroke-dasharray="3 5" />
+                  <path d="M90 24 105 62l38 28-38 28-15 38-15-38-38-28 38-28 15-38Z" fill="url(#heroFill)" />
+                  <path d="M90 42v96M42 90h96M56 56l68 68M124 56l-68 68" fill="none" stroke="#fff" opacity=".34" />
+                  <circle cx="90" cy="90" r="11" fill="#fff" />
+                  <circle cx="90" cy="90" r="5" fill="#1570ef" />
+                  <defs>
+                    <linearGradient id="heroFill" x1="24" y1="24" x2="156" y2="156" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#69ddff" />
+                      <stop offset="1" stop-color="#4c8dff" />
+                    </linearGradient>
+                  </defs>
+                </svg>
+                <span class="core-label">STEM<br /><strong>DISCOVERY</strong></span>
+              </div>
+              <div class="floating-data data-a">
+                <span class="mini-icon">S</span>
+                <div><small>科学探究</small><strong id="hero-s-score">—</strong></div>
+              </div>
+              <div class="floating-data data-b">
+                <span class="mini-icon teal">E</span>
+                <div><small>工程实践</small><strong id="hero-e-score">—</strong></div>
+              </div>
+              <div class="floating-data data-c">
+                <span class="live-dot"></span>
+                <div><small>T3 聚类画像</small><strong id="hero-cluster">—</strong></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="stat-grid overview-stats">
+            <article class="stat-card">
+              <div class="stat-icon blue"><svg><use href="#i-profile"></use></svg></div>
+              <div><span>虚拟学生</span><strong>200<small>名</small></strong></div>
+              <em>ST001–ST200</em>
+            </article>
+            <article class="stat-card">
+              <div class="stat-icon teal"><svg><use href="#i-data"></use></svg></div>
+              <div><span>阶段测评记录</span><strong>600<small>条</small></strong></div>
+              <em>T1 · T2 · T3</em>
+            </article>
+            <article class="stat-card">
+              <div class="stat-icon purple"><svg><use href="#i-lab"></use></svg></div>
+              <div><span>数据挖掘算法</span><strong id="overview-metric-count">4<small>类</small></strong></div>
+              <em>真实运行结果</em>
+            </article>
+            <article class="stat-card">
+              <div class="stat-icon amber"><svg><use href="#i-overview"></use></svg></div>
+              <div><span>功能模块</span><strong>7<small>个</small></strong></div>
+              <em>完整交互闭环</em>
+            </article>
+          </div>
+
+          <div class="content-grid two-thirds">
+            <section class="card framework-card">
+              <div class="section-heading">
+                <div>
+                  <p class="eyebrow dark">STEM-6 FRAMEWORK</p>
+                  <h2>六维能力评价框架</h2>
+                </div>
+                <span class="soft-tag">T3 群体均值</span>
+              </div>
+              <p class="section-note">
+                学科核心能力 S/T/E/M 与跨学科通用能力 I/C。每个二级指标 100 分，
+                一级维度取三个二级指标算术平均，综合能力等权汇总。
+              </p>
+              <div class="dimension-grid" id="overview-dimensions"></div>
+              <div class="formula-strip">
+                <span>维度得分 = (指标1 + 指标2 + 指标3) ÷ 3</span>
+                <span>综合能力 = 六维得分之和 ÷ 6</span>
+              </div>
+            </section>
+
+            <aside class="card data-snapshot">
+              <div class="section-heading compact">
+                <div>
+                  <p class="eyebrow dark">DATA SNAPSHOT</p>
+                  <h2>数据质量概览</h2>
+                </div>
+                <span class="status-pill success">已清洗</span>
+              </div>
+              <div class="donut-wrap">
+                <div class="quality-donut" id="quality-donut">
+                  <strong>100%</strong><span>无残余缺失</span>
+                </div>
+              </div>
+              <div class="snapshot-list" id="overview-quality-list"></div>
+              <button class="text-button" data-go="data">
+                查看完整数据审计 <svg><use href="#i-arrow"></use></svg>
+              </button>
+            </aside>
+          </div>
+
+          <section class="card algorithms-overview">
+            <div class="section-heading">
+              <div>
+                <p class="eyebrow dark">MINING PIPELINE</p>
+                <h2>四类算法，四种教育洞察</h2>
+              </div>
+              <button class="text-button" data-go="lab">查看实验详情 <svg><use href="#i-arrow"></use></svg></button>
+            </div>
+            <div class="algorithm-grid" id="overview-algorithms"></div>
+          </section>
+
+          <section class="card workflow-card">
+            <div class="section-heading">
+              <div>
+                <p class="eyebrow dark">RESEARCH WORKFLOW</p>
+                <h2>从多源数据到动态反馈</h2>
+              </div>
+              <span class="soft-tag">教师保留最终决策权</span>
+            </div>
+            <div class="workflow-track" id="workflow-track"></div>
+          </section>
+
+          <div class="ethics-banner">
+            <svg><use href="#i-info"></use></svg>
+            <div>
+              <strong>研究边界声明</strong>
+              <span>STEM-6 为本课程研究提出的综合评价框架，尚未经过真实中学生样本的信度与效度检验。</span>
+            </div>
+            <button class="button small outline" data-go="governance">了解伦理治理</button>
+          </div>
+        </section>
+
+        <section class="page" id="page-data" data-page="data">
+          <div class="page-header">
+            <div>
+              <p class="eyebrow dark">02 · DATA CENTER</p>
+              <h1>数据管理中心</h1>
+              <p>浏览合成数据规模、质量、分布与字段说明，按学生、年级和阶段筛选。</p>
+            </div>
+            <div class="header-actions">
+              <a class="button secondary" href="data/students_raw.csv" download>
+                <svg><use href="#i-download"></use></svg>原始数据
+              </a>
+              <a class="button primary" href="data/students_cleaned.csv" download>
+                <svg><use href="#i-download"></use></svg>清洗后数据
+              </a>
+            </div>
+          </div>
+
+          <div class="stat-grid">
+            <article class="stat-card">
+              <div class="stat-icon blue"><svg><use href="#i-profile"></use></svg></div>
+              <div><span>模拟学生总量</span><strong>200<small>名</small></strong></div>
+              <em>7–9 年级</em>
+            </article>
+            <article class="stat-card">
+              <div class="stat-icon teal"><svg><use href="#i-data"></use></svg></div>
+              <div><span>阶段测评记录</span><strong>600<small>条</small></strong></div>
+              <em>3 个时间阶段</em>
+            </article>
+            <article class="stat-card">
+              <div class="stat-icon amber"><svg><use href="#i-info"></use></svg></div>
+              <div><span>原始缺失值</span><strong id="data-missing-before">—</strong></div>
+              <em>逐字段审计</em>
+            </article>
+            <article class="stat-card">
+              <div class="stat-icon purple"><svg><use href="#i-check"></use></svg></div>
+              <div><span>清洗后缺失</span><strong id="data-missing-after">—</strong></div>
+              <em id="data-imputed-rows">—</em>
+            </article>
+          </div>
+
+          <div class="content-grid equal">
+            <section class="card">
+              <div class="section-heading compact">
+                <div><p class="eyebrow dark">GRADE DISTRIBUTION</p><h2>年级人数分布</h2></div>
+                <span class="soft-tag">n = 200</span>
+              </div>
+              <div class="chart-box" id="grade-chart"></div>
+            </section>
+            <section class="card">
+              <div class="section-heading compact">
+                <div><p class="eyebrow dark">COMPLETENESS</p><h2>缺失值处理前后</h2></div>
+                <span class="status-pill success">审计留痕</span>
+              </div>
+              <div class="missing-compare" id="missing-compare"></div>
+              <p class="micro-copy">
+                缺失值不以 0 代替。全样本清洗文件用于数据浏览；监督模型从原始数据重建特征，
+                行为插补仅在各训练折拟合，避免测试信息泄漏。
+              </p>
+            </section>
+          </div>
+
+          <section class="card">
+            <div class="section-heading">
+              <div><p class="eyebrow dark">COMPETENCY DISTRIBUTION</p><h2>六维能力总体分布</h2></div>
+              <label class="field compact-field">
+                <span>测评阶段</span>
+                <select id="data-stage-select">
+                  <option value="T1">T1 · 初始测评</option>
+                  <option value="T2">T2 · 阶段测评</option>
+                  <option value="T3" selected>T3 · 后续测评</option>
+                </select>
+              </label>
+            </div>
+            <div class="chart-box tall" id="data-dimension-chart"></div>
+          </section>
+
+          <section class="card">
+            <div class="section-heading filter-heading">
+              <div><p class="eyebrow dark">STUDENT DATA</p><h2>学生数据浏览</h2></div>
+              <div class="inline-filters">
+                <label class="search-field">
+                  <svg><use href="#i-search"></use></svg>
+                  <input id="data-search" type="search" placeholder="搜索学生编号" />
+                </label>
+                <select id="data-grade-select" aria-label="按年级筛选">
+                  <option value="all">全部年级</option>
+                  <option value="7">七年级</option>
+                  <option value="8">八年级</option>
+                  <option value="9">九年级</option>
+                </select>
+              </div>
+            </div>
+            <div class="table-meta">
+              <span id="data-filter-count">显示 200 名学生</span>
+              <span>数值单位：能力分 / 100</span>
+            </div>
+            <div class="table-wrap">
+              <table class="data-table" id="data-student-table">
+                <thead></thead>
+                <tbody></tbody>
+              </table>
+            </div>
+            <div class="pagination" id="data-pagination"></div>
+          </section>
+
+          <section class="card">
+            <div class="section-heading filter-heading">
+              <div><p class="eyebrow dark">DATA DICTIONARY</p><h2>数据字典</h2></div>
+              <label class="search-field">
+                <svg><use href="#i-search"></use></svg>
+                <input id="dictionary-search" type="search" placeholder="搜索字段或用途" />
+              </label>
+            </div>
+            <div class="table-wrap dictionary-wrap">
+              <table class="data-table dictionary-table" id="dictionary-table">
+                <thead>
+                  <tr><th>字段名称</th><th>含义</th><th>单位</th><th>取值范围</th><th>用途</th></tr>
+                </thead>
+                <tbody></tbody>
+              </table>
+            </div>
+          </section>
+        </section>
+
+        <section class="page" id="page-profile" data-page="profile">
+          <div class="page-header">
+            <div>
+              <p class="eyebrow dark">03 · COMPETENCY PROFILE</p>
+              <h1>STEM能力画像</h1>
+              <p>切换任意学生与测评阶段，查看六维结构、18 项指标与发展轨迹。</p>
+            </div>
+            <div class="profile-selectors">
+              <label class="field">
+                <span>选择学生</span>
+                <select id="profile-student-select"></select>
+              </label>
+              <label class="field">
+                <span>测评阶段</span>
+                <select id="profile-stage-select">
+                  <option value="T1">T1 · 初始测评</option>
+                  <option value="T2">T2 · 阶段测评</option>
+                  <option value="T3" selected>T3 · 后续测评</option>
+                </select>
+              </label>
+            </div>
+          </div>
+
+          <div class="profile-identity card" id="profile-identity"></div>
+
+          <div class="profile-grid">
+            <section class="card radar-panel">
+              <div class="section-heading compact">
+                <div><p class="eyebrow dark">STEM-6 RADAR</p><h2>六维能力雷达</h2></div>
+                <span class="soft-tag" id="profile-radar-stage">T3</span>
+              </div>
+              <div class="chart-box radar-box" id="profile-radar"></div>
+              <div class="radar-legend">
+                <span><i class="line-sample"></i>当前阶段</span>
+                <span><i class="area-sample"></i>群体参考线</span>
+              </div>
+            </section>
+
+            <section class="card profile-insights">
+              <div class="section-heading compact">
+                <div><p class="eyebrow dark">INTERPRETATION</p><h2>阶段性洞察</h2></div>
+                <span class="soft-tag">透明规则</span>
+              </div>
+              <div id="profile-insight-list"></div>
+            </section>
+
+            <section class="card trend-panel">
+              <div class="section-heading compact">
+                <div><p class="eyebrow dark">LONGITUDINAL</p><h2>综合能力变化</h2></div>
+                <span class="soft-tag" id="profile-trend-note">T1 → T3</span>
+              </div>
+              <div class="chart-box" id="profile-trend"></div>
+              <p class="micro-copy">未来阶段在到达前不显示具体数值，避免把研究回看数据误作当时已知信息。</p>
+            </section>
+
+            <section class="card cluster-panel">
+              <div class="section-heading compact">
+                <div><p class="eyebrow dark">PEER STRUCTURE</p><h2>聚类群体特征</h2></div>
+                <span class="cluster-badge" id="profile-cluster-badge">—</span>
+              </div>
+              <div id="profile-cluster-detail"></div>
+            </section>
+          </div>
+
+          <section class="card">
+            <div class="section-heading">
+              <div><p class="eyebrow dark">18 INDICATORS</p><h2>二级能力指标</h2></div>
+              <span class="soft-tag">维度内算术平均</span>
+            </div>
+            <div class="indicator-matrix" id="indicator-matrix"></div>
+          </section>
+
+          <div class="content-grid equal">
+            <section class="card" id="profile-develop-panel"></section>
+            <section class="card prediction-card" id="profile-prediction-panel"></section>
+          </div>
+        </section>
+
+        <section class="page" id="page-lab" data-page="lab">
+          <div class="page-header">
+            <div>
+              <p class="eyebrow dark">04 · MINING LAB</p>
+              <h1>数据挖掘实验室</h1>
+              <p>查看四类算法的真实运行结果、评价指标、可视化与研究限制。</p>
+            </div>
+            <div class="precompute-banner">
+              <svg><use href="#i-info"></use></svg>
+              <span><strong>预计算模式</strong> 所有指标由 Python 脚本实际运行；参数控件仅查询已验证结果。</span>
+            </div>
+          </div>
+
+          <div class="algorithm-tabs" role="tablist" aria-label="算法选择">
+            <button class="algorithm-tab active" data-algorithm="tree" role="tab">
+              <span>01</span><strong>决策树分类</strong><small>Decision Tree</small>
+            </button>
+            <button class="algorithm-tab" data-algorithm="regression" role="tab">
+              <span>02</span><strong>线性回归</strong><small>Linear Regression</small>
+            </button>
+            <button class="algorithm-tab" data-algorithm="clustering" role="tab">
+              <span>03</span><strong>K-means 聚类</strong><small>Clustering</small>
+            </button>
+            <button class="algorithm-tab" data-algorithm="association" role="tab">
+              <span>04</span><strong>Apriori 关联规则</strong><small>Association Rules</small>
+            </button>
+          </div>
+
+          <div class="algorithm-panel active" id="lab-tree" data-panel="tree"></div>
+          <div class="algorithm-panel" id="lab-regression" data-panel="regression"></div>
+          <div class="algorithm-panel" id="lab-clustering" data-panel="clustering"></div>
+          <div class="algorithm-panel" id="lab-association" data-panel="association"></div>
+        </section>
+
+        <section class="page" id="page-learning" data-page="learning">
+          <div class="page-header">
+            <div>
+              <p class="eyebrow dark">05 · PERSONALIZED LEARNING</p>
+              <h1>个性化学习中心</h1>
+              <p>依据能力画像与支持需求，通过公开规则生成四周学习发展计划。</p>
+            </div>
+            <label class="field">
+              <span>选择学生</span>
+              <select id="learning-student-select"></select>
+            </label>
+          </div>
+
+          <div class="learning-hero card" id="learning-hero"></div>
+          <div class="learning-layout">
+            <section class="card plan-panel">
+              <div class="section-heading">
+                <div><p class="eyebrow dark">FOUR-WEEK PLAN</p><h2>四周学习发展计划</h2></div>
+                <button class="button secondary small" id="download-plan-button">
+                  <svg><use href="#i-download"></use></svg>导出计划
+                </button>
+              </div>
+              <div class="week-tabs" id="week-tabs"></div>
+              <div class="task-list" id="learning-task-list"></div>
+            </section>
+            <aside class="learning-sidebar">
+              <section class="card recommendation-logic">
+                <div class="section-heading compact">
+                  <div><p class="eyebrow dark">RULE TRANSPARENCY</p><h2>推荐依据</h2></div>
+                </div>
+                <div id="recommendation-logic"></div>
+                <div class="transparent-rule">
+                  推荐不等于已证实有效的教育干预；教师可修改、暂缓或批准。
+                </div>
+              </section>
+              <section class="card feedback-summary">
+                <div class="section-heading compact">
+                  <div><p class="eyebrow dark">STUDENT VOICE</p><h2>学生反馈记录</h2></div>
+                </div>
+                <div id="feedback-summary-list"></div>
+              </section>
+            </aside>
+          </div>
+        </section>
+
+        <section class="page" id="page-career" data-page="career">
+          <div class="page-header">
+            <div>
+              <p class="eyebrow dark">06 · CAREER EXPLORATION</p>
+              <h1>STEM职业探索</h1>
+              <p>把六维能力与四类职业兴趣放在一起，用于职业启蒙与探索，不作分流判断。</p>
+            </div>
+            <label class="field">
+              <span>选择学生</span>
+              <select id="career-student-select"></select>
+            </label>
+          </div>
+
+          <div class="career-summary-grid">
+            <section class="card career-radar-card">
+              <div class="section-heading compact">
+                <div><p class="eyebrow dark">ABILITY × INTEREST</p><h2 id="career-student-title">能力与兴趣</h2></div>
+                <span class="soft-tag">T3 + 独立兴趣</span>
+              </div>
+              <div class="content-grid career-inner">
+                <div class="chart-box radar-box" id="career-radar"></div>
+                <div class="interest-bars" id="career-interest-bars"></div>
+              </div>
+            </section>
+            <aside class="card career-guidance">
+              <div class="section-heading compact">
+                <div><p class="eyebrow dark">EXPLORATION NOTE</p><h2>探索提示</h2></div>
+              </div>
+              <div id="career-guidance"></div>
+            </aside>
+          </div>
+
+          <div class="section-heading standalone">
+            <div>
+              <p class="eyebrow dark">SEVEN DIRECTIONS</p>
+              <h2>职业体验方向</h2>
+              <p>排序依据为兴趣强度与相关能力均值，不代表职业匹配概率或适合程度。</p>
+            </div>
+            <div class="legend-row">
+              <span><i class="legend-dot blue"></i>能力有基础</span>
+              <span><i class="legend-dot teal"></i>兴趣较强</span>
+            </div>
+          </div>
+          <div class="career-grid" id="career-grid"></div>
+          <div class="ethics-banner subtle">
+            <svg><use href="#i-info"></use></svg>
+            <div>
+              <strong>职业探索边界</strong>
+              <span>本模块不提供匹配概率，不会因当前能力较低而排除任何职业方向；结果不代表正式职业测评或职业分流。</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="page" id="page-governance" data-page="governance">
+          <div class="page-header">
+            <div>
+              <p class="eyebrow dark">07 · TEACHER &amp; GOVERNANCE</p>
+              <h1>教师工作台与伦理治理</h1>
+              <p>审核个性化建议、记录反馈，并检查模型与数据使用边界。</p>
+            </div>
+            <span class="role-badge"><svg><use href="#i-governance"></use></svg>教师最终决策</span>
+          </div>
+
+          <div class="governance-metrics" id="governance-metrics"></div>
+
+          <div class="content-grid equal">
+            <section class="card">
+              <div class="section-heading compact">
+                <div><p class="eyebrow dark">SUPPORT NEEDS</p><h2>学习支持需求分布</h2></div>
+                <span class="soft-tag">T3</span>
+              </div>
+              <div class="chart-box" id="support-distribution-chart"></div>
+            </section>
+            <section class="card">
+              <div class="section-heading compact">
+                <div><p class="eyebrow dark">CLUSTER MIX</p><h2>群体画像构成</h2></div>
+                <span class="soft-tag">K-means</span>
+              </div>
+              <div class="cluster-distribution" id="cluster-distribution"></div>
+            </section>
+          </div>
+
+          <section class="card review-workspace">
+            <div class="section-heading filter-heading">
+              <div><p class="eyebrow dark">TEACHER REVIEW</p><h2>个性化学习建议审核</h2></div>
+              <div class="inline-filters">
+                <label class="field compact-field">
+                  <span>审核学生</span>
+                  <select id="review-student-select"></select>
+                </label>
+                <label class="search-field">
+                  <svg><use href="#i-search"></use></svg>
+                  <input id="review-search" type="search" placeholder="搜索学生或支持需求" />
+                </label>
+              </div>
+            </div>
+            <div class="review-layout">
+              <div class="review-student-summary" id="review-student-summary"></div>
+              <div class="review-list" id="review-list"></div>
+            </div>
+            <div class="review-records">
+              <div class="section-heading compact">
+                <div><p class="eyebrow dark">AUDIT TRAIL</p><h2>教师反馈记录</h2></div>
+                <button class="text-button danger-text" id="clear-review-history">清空本机记录</button>
+              </div>
+              <div id="review-history"></div>
+            </div>
+          </section>
+
+          <div class="content-grid equal">
+            <section class="card">
+              <div class="section-heading compact">
+                <div><p class="eyebrow dark">GRADE-LEVEL DIAGNOSTIC</p><h2>年级误差与需求分布</h2></div>
+                <span class="status-pill warning">小样本比较</span>
+              </div>
+              <div class="table-wrap">
+                <table class="data-table fairness-table" id="fairness-table">
+                  <thead><tr><th>年级</th><th>测试人数</th><th>分类正确数</th><th>平均绝对预测误差</th><th>优先支持占比</th></tr></thead>
+                  <tbody></tbody>
+                </table>
+              </div>
+              <p class="micro-copy">仅在合成测试集上做描述性比较；样本有限，不能据此宣称算法公平。</p>
+            </section>
+            <section class="card">
+              <div class="section-heading compact">
+                <div><p class="eyebrow dark">SYNTHETIC DATA</p><h2>数据与模型声明</h2></div>
+                <span class="status-pill warning">模拟研究</span>
+              </div>
+              <div class="model-disclosure">
+                <div><span>数据来源</span><strong>200 名人工合成虚拟学生</strong></div>
+                <div><span>个人信息</span><strong>不含真实未成年人身份信息</strong></div>
+                <div><span>模型用途</span><strong>技术流程与系统可行性展示</strong></div>
+                <div><span>结论边界</span><strong>不代表真实测评、诊断或干预效果</strong></div>
+              </div>
+            </section>
+          </div>
+
+          <div class="ethics-grid-heading">
+            <p class="eyebrow dark">ETHICS BY DESIGN</p>
+            <h2>八项伦理治理原则</h2>
+          </div>
+          <div class="ethics-card-grid" id="ethics-card-grid"></div>
+
+          <section class="card references-card">
+            <div class="section-heading compact">
+              <div><p class="eyebrow dark">THEORETICAL REFERENCES</p><h2>理论参考</h2></div>
+              <span class="soft-tag">仅作设计参考</span>
+            </div>
+            <div class="reference-list">
+              <span>Romero &amp; Ventura (2020)</span>
+              <span>Arikan et al. (2022)</span>
+              <span>Alvarez-Garcia et al. (2024)</span>
+              <span>Kalita et al. (2025)</span>
+              <span>Kier et al. (2014)</span>
+              <span>Baker &amp; Hawn (2022)</span>
+              <span>Gouseti et al. (2025)</span>
+              <span>OECD (2024)</span>
+            </div>
+            <p class="micro-copy">以上文献仅作为教育数据挖掘、公平性与职业发展设计的理论参考。网站未虚构文献数据、模型效果或具体结论；STEM-6 不是这些文献已验证的标准量表。</p>
+          </section>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <div>
+          <strong>STEM Compass</strong>
+          <span>本平台为 INT6143 课程个人研究原型，所有学生数据均为人工合成的模拟数据，不涉及真实未成年人个人信息。</span>
+        </div>
+        <span>运行模式：合成模拟数据 · Python 预计算模型 · 浏览器本地存储。算法结果仅用于技术流程与系统可行性展示，不代表真实教育测评结果或实际教学干预效果。</span>
+      </footer>
+    </div>
+
+    <div class="sidebar-backdrop" id="sidebar-backdrop"></div>
+    <div class="chart-tooltip" id="chart-tooltip" role="status"></div>
+    <div class="toast-region" id="toast-region" aria-live="polite"></div>
+
+    <dialog id="modify-dialog">
+      <form method="dialog" class="dialog-card">
+        <div class="dialog-heading">
+          <div><p class="eyebrow dark">TEACHER EDIT</p><h2>修改推荐内容</h2></div>
+          <button class="icon-button" value="cancel" aria-label="关闭"><svg><use href="#i-close"></use></svg></button>
+        </div>
+        <label class="field">
+          <span>修改后的任务名称</span>
+          <input id="modify-task-name" required maxlength="80" />
+        </label>
+        <label class="field">
+          <span>教师说明</span>
+          <textarea id="modify-task-reason" rows="4" maxlength="260" placeholder="记录修改原因与教学考虑"></textarea>
+        </label>
+        <div class="dialog-actions">
+          <button class="button secondary" value="cancel">取消</button>
+          <button class="button primary" id="confirm-modify" value="default">保存修改</button>
+        </div>
+      </form>
+    </dialog>
+
+    <script src="assets/data/app-data.js"></script>
+    <script src="assets/js/app.js"></script>
+  </body>
+</html>

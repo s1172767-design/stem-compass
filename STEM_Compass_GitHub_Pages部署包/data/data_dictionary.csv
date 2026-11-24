@@ -1,0 +1,158 @@
+﻿field_name,meaning,unit,range,purpose
+student_id,学生编号,—,ST001–ST200,唯一标识学生；用于按学生划分训练集与测试集
+grade,年级,年级,7–9,群体筛选与分组分析
+stage,测评阶段,—,T1/T2/T3,纵向数据标识
+SCI_1_knowledge,科学知识理解 / Scientific knowledge,分,0–100,S维度下二级能力指标；三维算术平均得到一级维度得分
+SCI_2_experiment,实验设计 / Experiment design,分,0–100,S维度下二级能力指标；三维算术平均得到一级维度得分
+SCI_3_evidence,证据分析 / Evidence analysis,分,0–100,S维度下二级能力指标；三维算术平均得到一级维度得分
+TEC_1_tools,数字工具操作 / Digital tool operation,分,0–100,T维度下二级能力指标；三维算术平均得到一级维度得分
+TEC_2_information,信息处理 / Information processing,分,0–100,T维度下二级能力指标；三维算术平均得到一级维度得分
+TEC_3_problem_solving,技术问题解决 / Technical problem solving,分,0–100,T维度下二级能力指标；三维算术平均得到一级维度得分
+ENG_1_design,工程方案设计 / Engineering design,分,0–100,E维度下二级能力指标；三维算术平均得到一级维度得分
+ENG_2_prototype,原型制作 / Prototype making,分,0–100,E维度下二级能力指标；三维算术平均得到一级维度得分
+ENG_3_optimization,测试与优化 / Testing and optimization,分,0–100,E维度下二级能力指标；三维算术平均得到一级维度得分
+MAT_1_application,数学知识应用 / Mathematical application,分,0–100,M维度下二级能力指标；三维算术平均得到一级维度得分
+MAT_2_reasoning,逻辑推理 / Logical reasoning,分,0–100,M维度下二级能力指标；三维算术平均得到一级维度得分
+MAT_3_modeling,数学建模 / Mathematical modelling,分,0–100,M维度下二级能力指标；三维算术平均得到一级维度得分
+INN_1_ideas,创意生成 / Idea generation,分,0–100,I维度下二级能力指标；三维算术平均得到一级维度得分
+INN_2_diversity,方案多样性 / Solution diversity,分,0–100,I维度下二级能力指标；三维算术平均得到一级维度得分
+INN_3_improvement,创意改进 / Idea refinement,分,0–100,I维度下二级能力指标；三维算术平均得到一级维度得分
+COL_1_communication,团队沟通 / Team communication,分,0–100,C维度下二级能力指标；三维算术平均得到一级维度得分
+COL_2_division,任务分工 / Task division,分,0–100,C维度下二级能力指标；三维算术平均得到一级维度得分
+COL_3_contribution,合作贡献 / Collaborative contribution,分,0–100,C维度下二级能力指标；三维算术平均得到一级维度得分
+S,科学探究能力 / STEM-6 S,分,0–100,三个二级指标的算术平均值
+T,技术应用能力 / STEM-6 T,分,0–100,三个二级指标的算术平均值
+E,工程实践能力 / STEM-6 E,分,0–100,三个二级指标的算术平均值
+M,数学思维能力 / STEM-6 M,分,0–100,三个二级指标的算术平均值
+I,创新能力 / STEM-6 I,分,0–100,三个二级指标的算术平均值
+C,协作能力 / STEM-6 C,分,0–100,三个二级指标的算术平均值
+overall,综合能力得分 / Overall score,分,0–100,六维得分的等权算术平均值
+task_completion_rate,学习任务完成率,见取值范围,0–1,学习行为特征与关联规则离散化输入
+weekly_study_hours,每周学习时长,见取值范围,1–15,学习行为特征与关联规则离散化输入
+project_participation_count,项目参与次数,见取值范围,0–8,学习行为特征与关联规则离散化输入
+experiment_completion,实验任务完成情况,见取值范围,0–100,学习行为特征与关联规则离散化输入
+digital_tool_use,数字工具使用情况,见取值范围,1–5,学习行为特征与关联规则离散化输入
+classroom_engagement,课堂参与情况,见取值范围,1–5,学习行为特征与关联规则离散化输入
+feedback_frequency,学习反馈频率,见取值范围,0–5,学习行为特征与关联规则离散化输入
+teacher_observation,教师观察评价,见取值范围,0–100,学习行为特征与关联规则离散化输入
+interest_science,科学职业兴趣,Likert分,1–5,STEM职业探索；不计入六维能力
+interest_technology,技术职业兴趣,Likert分,1–5,STEM职业探索；不计入六维能力
+interest_engineering,工程职业兴趣,Likert分,1–5,STEM职业探索；不计入六维能力
+interest_math,数学职业兴趣,Likert分,1–5,STEM职业探索；不计入六维能力
+support_need_t3,T3支持需求类别,类别,三类支持,由独立模拟支持测评与预定规则生成；仅作决策树目标标签，不作为输入特征
+imputation_count,本阶段插补字段数,项,0–5,数据质量审计
+imputed_fields,插补字段列表,—,分号分隔,记录数据清洗过程
+data_quality_flag,数据质量标记,—,complete/imputed,提示记录是否经过插补
+imputation_count_total,三阶段累计插补数,项,0–15,学生级数据质量汇总
+S_T1,科学探究能力 / STEM-6 S（T1）,分,0–100,纵向宽表中的 T1 阶段派生字段；三个二级指标的算术平均值
+T_T1,技术应用能力 / STEM-6 T（T1）,分,0–100,纵向宽表中的 T1 阶段派生字段；三个二级指标的算术平均值
+E_T1,工程实践能力 / STEM-6 E（T1）,分,0–100,纵向宽表中的 T1 阶段派生字段；三个二级指标的算术平均值
+M_T1,数学思维能力 / STEM-6 M（T1）,分,0–100,纵向宽表中的 T1 阶段派生字段；三个二级指标的算术平均值
+I_T1,创新能力 / STEM-6 I（T1）,分,0–100,纵向宽表中的 T1 阶段派生字段；三个二级指标的算术平均值
+C_T1,协作能力 / STEM-6 C（T1）,分,0–100,纵向宽表中的 T1 阶段派生字段；三个二级指标的算术平均值
+overall_T1,综合能力得分 / Overall score（T1）,分,0–100,纵向宽表中的 T1 阶段派生字段；六维得分的等权算术平均值
+task_completion_rate_T1,学习任务完成率（T1）,见取值范围,0–1,纵向宽表中的 T1 阶段派生字段；学习行为特征与关联规则离散化输入
+weekly_study_hours_T1,每周学习时长（T1）,见取值范围,1–15,纵向宽表中的 T1 阶段派生字段；学习行为特征与关联规则离散化输入
+project_participation_count_T1,项目参与次数（T1）,见取值范围,0–8,纵向宽表中的 T1 阶段派生字段；学习行为特征与关联规则离散化输入
+experiment_completion_T1,实验任务完成情况（T1）,见取值范围,0–100,纵向宽表中的 T1 阶段派生字段；学习行为特征与关联规则离散化输入
+digital_tool_use_T1,数字工具使用情况（T1）,见取值范围,1–5,纵向宽表中的 T1 阶段派生字段；学习行为特征与关联规则离散化输入
+classroom_engagement_T1,课堂参与情况（T1）,见取值范围,1–5,纵向宽表中的 T1 阶段派生字段；学习行为特征与关联规则离散化输入
+feedback_frequency_T1,学习反馈频率（T1）,见取值范围,0–5,纵向宽表中的 T1 阶段派生字段；学习行为特征与关联规则离散化输入
+teacher_observation_T1,教师观察评价（T1）,见取值范围,0–100,纵向宽表中的 T1 阶段派生字段；学习行为特征与关联规则离散化输入
+interest_science_T1,科学职业兴趣（T1）,Likert分,1–5,纵向宽表中的 T1 阶段派生字段；STEM职业探索；不计入六维能力
+interest_technology_T1,技术职业兴趣（T1）,Likert分,1–5,纵向宽表中的 T1 阶段派生字段；STEM职业探索；不计入六维能力
+interest_engineering_T1,工程职业兴趣（T1）,Likert分,1–5,纵向宽表中的 T1 阶段派生字段；STEM职业探索；不计入六维能力
+interest_math_T1,数学职业兴趣（T1）,Likert分,1–5,纵向宽表中的 T1 阶段派生字段；STEM职业探索；不计入六维能力
+SCI_1_knowledge_T1,科学知识理解 / Scientific knowledge（T1）,分,0–100,纵向宽表中的 T1 阶段派生字段；S维度下二级能力指标；三维算术平均得到一级维度得分
+SCI_2_experiment_T1,实验设计 / Experiment design（T1）,分,0–100,纵向宽表中的 T1 阶段派生字段；S维度下二级能力指标；三维算术平均得到一级维度得分
+SCI_3_evidence_T1,证据分析 / Evidence analysis（T1）,分,0–100,纵向宽表中的 T1 阶段派生字段；S维度下二级能力指标；三维算术平均得到一级维度得分
+TEC_1_tools_T1,数字工具操作 / Digital tool operation（T1）,分,0–100,纵向宽表中的 T1 阶段派生字段；T维度下二级能力指标；三维算术平均得到一级维度得分
+TEC_2_information_T1,信息处理 / Information processing（T1）,分,0–100,纵向宽表中的 T1 阶段派生字段；T维度下二级能力指标；三维算术平均得到一级维度得分
+TEC_3_problem_solving_T1,技术问题解决 / Technical problem solving（T1）,分,0–100,纵向宽表中的 T1 阶段派生字段；T维度下二级能力指标；三维算术平均得到一级维度得分
+ENG_1_design_T1,工程方案设计 / Engineering design（T1）,分,0–100,纵向宽表中的 T1 阶段派生字段；E维度下二级能力指标；三维算术平均得到一级维度得分
+ENG_2_prototype_T1,原型制作 / Prototype making（T1）,分,0–100,纵向宽表中的 T1 阶段派生字段；E维度下二级能力指标；三维算术平均得到一级维度得分
+ENG_3_optimization_T1,测试与优化 / Testing and optimization（T1）,分,0–100,纵向宽表中的 T1 阶段派生字段；E维度下二级能力指标；三维算术平均得到一级维度得分
+MAT_1_application_T1,数学知识应用 / Mathematical application（T1）,分,0–100,纵向宽表中的 T1 阶段派生字段；M维度下二级能力指标；三维算术平均得到一级维度得分
+MAT_2_reasoning_T1,逻辑推理 / Logical reasoning（T1）,分,0–100,纵向宽表中的 T1 阶段派生字段；M维度下二级能力指标；三维算术平均得到一级维度得分
+MAT_3_modeling_T1,数学建模 / Mathematical modelling（T1）,分,0–100,纵向宽表中的 T1 阶段派生字段；M维度下二级能力指标；三维算术平均得到一级维度得分
+INN_1_ideas_T1,创意生成 / Idea generation（T1）,分,0–100,纵向宽表中的 T1 阶段派生字段；I维度下二级能力指标；三维算术平均得到一级维度得分
+INN_2_diversity_T1,方案多样性 / Solution diversity（T1）,分,0–100,纵向宽表中的 T1 阶段派生字段；I维度下二级能力指标；三维算术平均得到一级维度得分
+INN_3_improvement_T1,创意改进 / Idea refinement（T1）,分,0–100,纵向宽表中的 T1 阶段派生字段；I维度下二级能力指标；三维算术平均得到一级维度得分
+COL_1_communication_T1,团队沟通 / Team communication（T1）,分,0–100,纵向宽表中的 T1 阶段派生字段；C维度下二级能力指标；三维算术平均得到一级维度得分
+COL_2_division_T1,任务分工 / Task division（T1）,分,0–100,纵向宽表中的 T1 阶段派生字段；C维度下二级能力指标；三维算术平均得到一级维度得分
+COL_3_contribution_T1,合作贡献 / Collaborative contribution（T1）,分,0–100,纵向宽表中的 T1 阶段派生字段；C维度下二级能力指标；三维算术平均得到一级维度得分
+S_T2,科学探究能力 / STEM-6 S（T2）,分,0–100,纵向宽表中的 T2 阶段派生字段；三个二级指标的算术平均值
+T_T2,技术应用能力 / STEM-6 T（T2）,分,0–100,纵向宽表中的 T2 阶段派生字段；三个二级指标的算术平均值
+E_T2,工程实践能力 / STEM-6 E（T2）,分,0–100,纵向宽表中的 T2 阶段派生字段；三个二级指标的算术平均值
+M_T2,数学思维能力 / STEM-6 M（T2）,分,0–100,纵向宽表中的 T2 阶段派生字段；三个二级指标的算术平均值
+I_T2,创新能力 / STEM-6 I（T2）,分,0–100,纵向宽表中的 T2 阶段派生字段；三个二级指标的算术平均值
+C_T2,协作能力 / STEM-6 C（T2）,分,0–100,纵向宽表中的 T2 阶段派生字段；三个二级指标的算术平均值
+overall_T2,综合能力得分 / Overall score（T2）,分,0–100,纵向宽表中的 T2 阶段派生字段；六维得分的等权算术平均值
+task_completion_rate_T2,学习任务完成率（T2）,见取值范围,0–1,纵向宽表中的 T2 阶段派生字段；学习行为特征与关联规则离散化输入
+weekly_study_hours_T2,每周学习时长（T2）,见取值范围,1–15,纵向宽表中的 T2 阶段派生字段；学习行为特征与关联规则离散化输入
+project_participation_count_T2,项目参与次数（T2）,见取值范围,0–8,纵向宽表中的 T2 阶段派生字段；学习行为特征与关联规则离散化输入
+experiment_completion_T2,实验任务完成情况（T2）,见取值范围,0–100,纵向宽表中的 T2 阶段派生字段；学习行为特征与关联规则离散化输入
+digital_tool_use_T2,数字工具使用情况（T2）,见取值范围,1–5,纵向宽表中的 T2 阶段派生字段；学习行为特征与关联规则离散化输入
+classroom_engagement_T2,课堂参与情况（T2）,见取值范围,1–5,纵向宽表中的 T2 阶段派生字段；学习行为特征与关联规则离散化输入
+feedback_frequency_T2,学习反馈频率（T2）,见取值范围,0–5,纵向宽表中的 T2 阶段派生字段；学习行为特征与关联规则离散化输入
+teacher_observation_T2,教师观察评价（T2）,见取值范围,0–100,纵向宽表中的 T2 阶段派生字段；学习行为特征与关联规则离散化输入
+interest_science_T2,科学职业兴趣（T2）,Likert分,1–5,纵向宽表中的 T2 阶段派生字段；STEM职业探索；不计入六维能力
+interest_technology_T2,技术职业兴趣（T2）,Likert分,1–5,纵向宽表中的 T2 阶段派生字段；STEM职业探索；不计入六维能力
+interest_engineering_T2,工程职业兴趣（T2）,Likert分,1–5,纵向宽表中的 T2 阶段派生字段；STEM职业探索；不计入六维能力
+interest_math_T2,数学职业兴趣（T2）,Likert分,1–5,纵向宽表中的 T2 阶段派生字段；STEM职业探索；不计入六维能力
+SCI_1_knowledge_T2,科学知识理解 / Scientific knowledge（T2）,分,0–100,纵向宽表中的 T2 阶段派生字段；S维度下二级能力指标；三维算术平均得到一级维度得分
+SCI_2_experiment_T2,实验设计 / Experiment design（T2）,分,0–100,纵向宽表中的 T2 阶段派生字段；S维度下二级能力指标；三维算术平均得到一级维度得分
+SCI_3_evidence_T2,证据分析 / Evidence analysis（T2）,分,0–100,纵向宽表中的 T2 阶段派生字段；S维度下二级能力指标；三维算术平均得到一级维度得分
+TEC_1_tools_T2,数字工具操作 / Digital tool operation（T2）,分,0–100,纵向宽表中的 T2 阶段派生字段；T维度下二级能力指标；三维算术平均得到一级维度得分
+TEC_2_information_T2,信息处理 / Information processing（T2）,分,0–100,纵向宽表中的 T2 阶段派生字段；T维度下二级能力指标；三维算术平均得到一级维度得分
+TEC_3_problem_solving_T2,技术问题解决 / Technical problem solving（T2）,分,0–100,纵向宽表中的 T2 阶段派生字段；T维度下二级能力指标；三维算术平均得到一级维度得分
+ENG_1_design_T2,工程方案设计 / Engineering design（T2）,分,0–100,纵向宽表中的 T2 阶段派生字段；E维度下二级能力指标；三维算术平均得到一级维度得分
+ENG_2_prototype_T2,原型制作 / Prototype making（T2）,分,0–100,纵向宽表中的 T2 阶段派生字段；E维度下二级能力指标；三维算术平均得到一级维度得分
+ENG_3_optimization_T2,测试与优化 / Testing and optimization（T2）,分,0–100,纵向宽表中的 T2 阶段派生字段；E维度下二级能力指标；三维算术平均得到一级维度得分
+MAT_1_application_T2,数学知识应用 / Mathematical application（T2）,分,0–100,纵向宽表中的 T2 阶段派生字段；M维度下二级能力指标；三维算术平均得到一级维度得分
+MAT_2_reasoning_T2,逻辑推理 / Logical reasoning（T2）,分,0–100,纵向宽表中的 T2 阶段派生字段；M维度下二级能力指标；三维算术平均得到一级维度得分
+MAT_3_modeling_T2,数学建模 / Mathematical modelling（T2）,分,0–100,纵向宽表中的 T2 阶段派生字段；M维度下二级能力指标；三维算术平均得到一级维度得分
+INN_1_ideas_T2,创意生成 / Idea generation（T2）,分,0–100,纵向宽表中的 T2 阶段派生字段；I维度下二级能力指标；三维算术平均得到一级维度得分
+INN_2_diversity_T2,方案多样性 / Solution diversity（T2）,分,0–100,纵向宽表中的 T2 阶段派生字段；I维度下二级能力指标；三维算术平均得到一级维度得分
+INN_3_improvement_T2,创意改进 / Idea refinement（T2）,分,0–100,纵向宽表中的 T2 阶段派生字段；I维度下二级能力指标；三维算术平均得到一级维度得分
+COL_1_communication_T2,团队沟通 / Team communication（T2）,分,0–100,纵向宽表中的 T2 阶段派生字段；C维度下二级能力指标；三维算术平均得到一级维度得分
+COL_2_division_T2,任务分工 / Task division（T2）,分,0–100,纵向宽表中的 T2 阶段派生字段；C维度下二级能力指标；三维算术平均得到一级维度得分
+COL_3_contribution_T2,合作贡献 / Collaborative contribution（T2）,分,0–100,纵向宽表中的 T2 阶段派生字段；C维度下二级能力指标；三维算术平均得到一级维度得分
+S_T3,科学探究能力 / STEM-6 S（T3）,分,0–100,纵向宽表中的 T3 阶段派生字段；三个二级指标的算术平均值
+T_T3,技术应用能力 / STEM-6 T（T3）,分,0–100,纵向宽表中的 T3 阶段派生字段；三个二级指标的算术平均值
+E_T3,工程实践能力 / STEM-6 E（T3）,分,0–100,纵向宽表中的 T3 阶段派生字段；三个二级指标的算术平均值
+M_T3,数学思维能力 / STEM-6 M（T3）,分,0–100,纵向宽表中的 T3 阶段派生字段；三个二级指标的算术平均值
+I_T3,创新能力 / STEM-6 I（T3）,分,0–100,纵向宽表中的 T3 阶段派生字段；三个二级指标的算术平均值
+C_T3,协作能力 / STEM-6 C（T3）,分,0–100,纵向宽表中的 T3 阶段派生字段；三个二级指标的算术平均值
+overall_T3,综合能力得分 / Overall score（T3）,分,0–100,纵向宽表中的 T3 阶段派生字段；六维得分的等权算术平均值
+task_completion_rate_T3,学习任务完成率（T3）,见取值范围,0–1,纵向宽表中的 T3 阶段派生字段；学习行为特征与关联规则离散化输入
+weekly_study_hours_T3,每周学习时长（T3）,见取值范围,1–15,纵向宽表中的 T3 阶段派生字段；学习行为特征与关联规则离散化输入
+project_participation_count_T3,项目参与次数（T3）,见取值范围,0–8,纵向宽表中的 T3 阶段派生字段；学习行为特征与关联规则离散化输入
+experiment_completion_T3,实验任务完成情况（T3）,见取值范围,0–100,纵向宽表中的 T3 阶段派生字段；学习行为特征与关联规则离散化输入
+digital_tool_use_T3,数字工具使用情况（T3）,见取值范围,1–5,纵向宽表中的 T3 阶段派生字段；学习行为特征与关联规则离散化输入
+classroom_engagement_T3,课堂参与情况（T3）,见取值范围,1–5,纵向宽表中的 T3 阶段派生字段；学习行为特征与关联规则离散化输入
+feedback_frequency_T3,学习反馈频率（T3）,见取值范围,0–5,纵向宽表中的 T3 阶段派生字段；学习行为特征与关联规则离散化输入
+teacher_observation_T3,教师观察评价（T3）,见取值范围,0–100,纵向宽表中的 T3 阶段派生字段；学习行为特征与关联规则离散化输入
+interest_science_T3,科学职业兴趣（T3）,Likert分,1–5,纵向宽表中的 T3 阶段派生字段；STEM职业探索；不计入六维能力
+interest_technology_T3,技术职业兴趣（T3）,Likert分,1–5,纵向宽表中的 T3 阶段派生字段；STEM职业探索；不计入六维能力
+interest_engineering_T3,工程职业兴趣（T3）,Likert分,1–5,纵向宽表中的 T3 阶段派生字段；STEM职业探索；不计入六维能力
+interest_math_T3,数学职业兴趣（T3）,Likert分,1–5,纵向宽表中的 T3 阶段派生字段；STEM职业探索；不计入六维能力
+SCI_1_knowledge_T3,科学知识理解 / Scientific knowledge（T3）,分,0–100,纵向宽表中的 T3 阶段派生字段；S维度下二级能力指标；三维算术平均得到一级维度得分
+SCI_2_experiment_T3,实验设计 / Experiment design（T3）,分,0–100,纵向宽表中的 T3 阶段派生字段；S维度下二级能力指标；三维算术平均得到一级维度得分
+SCI_3_evidence_T3,证据分析 / Evidence analysis（T3）,分,0–100,纵向宽表中的 T3 阶段派生字段；S维度下二级能力指标；三维算术平均得到一级维度得分
+TEC_1_tools_T3,数字工具操作 / Digital tool operation（T3）,分,0–100,纵向宽表中的 T3 阶段派生字段；T维度下二级能力指标；三维算术平均得到一级维度得分
+TEC_2_information_T3,信息处理 / Information processing（T3）,分,0–100,纵向宽表中的 T3 阶段派生字段；T维度下二级能力指标；三维算术平均得到一级维度得分
+TEC_3_problem_solving_T3,技术问题解决 / Technical problem solving（T3）,分,0–100,纵向宽表中的 T3 阶段派生字段；T维度下二级能力指标；三维算术平均得到一级维度得分
+ENG_1_design_T3,工程方案设计 / Engineering design（T3）,分,0–100,纵向宽表中的 T3 阶段派生字段；E维度下二级能力指标；三维算术平均得到一级维度得分
+ENG_2_prototype_T3,原型制作 / Prototype making（T3）,分,0–100,纵向宽表中的 T3 阶段派生字段；E维度下二级能力指标；三维算术平均得到一级维度得分
+ENG_3_optimization_T3,测试与优化 / Testing and optimization（T3）,分,0–100,纵向宽表中的 T3 阶段派生字段；E维度下二级能力指标；三维算术平均得到一级维度得分
+MAT_1_application_T3,数学知识应用 / Mathematical application（T3）,分,0–100,纵向宽表中的 T3 阶段派生字段；M维度下二级能力指标；三维算术平均得到一级维度得分
+MAT_2_reasoning_T3,逻辑推理 / Logical reasoning（T3）,分,0–100,纵向宽表中的 T3 阶段派生字段；M维度下二级能力指标；三维算术平均得到一级维度得分
+MAT_3_modeling_T3,数学建模 / Mathematical modelling（T3）,分,0–100,纵向宽表中的 T3 阶段派生字段；M维度下二级能力指标；三维算术平均得到一级维度得分
+INN_1_ideas_T3,创意生成 / Idea generation（T3）,分,0–100,纵向宽表中的 T3 阶段派生字段；I维度下二级能力指标；三维算术平均得到一级维度得分
+INN_2_diversity_T3,方案多样性 / Solution diversity（T3）,分,0–100,纵向宽表中的 T3 阶段派生字段；I维度下二级能力指标；三维算术平均得到一级维度得分
+INN_3_improvement_T3,创意改进 / Idea refinement（T3）,分,0–100,纵向宽表中的 T3 阶段派生字段；I维度下二级能力指标；三维算术平均得到一级维度得分
+COL_1_communication_T3,团队沟通 / Team communication（T3）,分,0–100,纵向宽表中的 T3 阶段派生字段；C维度下二级能力指标；三维算术平均得到一级维度得分
+COL_2_division_T3,任务分工 / Task division（T3）,分,0–100,纵向宽表中的 T3 阶段派生字段；C维度下二级能力指标；三维算术平均得到一级维度得分
+COL_3_contribution_T3,合作贡献 / Collaborative contribution（T3）,分,0–100,纵向宽表中的 T3 阶段派生字段；C维度下二级能力指标；三维算术平均得到一级维度得分
+support_need,纵向汇总字段,—,见数据说明,学生级纵向分析辅助字段
