@@ -1,0 +1,32 @@
+{
+  "project": "STEM Compass",
+  "mode": "static",
+  "entry": "index.html",
+  "generatedBy": "scripts/build_site.py",
+  "files": [
+    ".nojekyll",
+    "assets/css/styles.css",
+    "assets/data/app-data.js",
+    "assets/data/app-data.json",
+    "assets/js/app.js",
+    "data/data_dictionary.csv",
+    "data/generation_summary.json",
+    "data/students_cleaned.csv",
+    "data/students_longitudinal.csv",
+    "data/students_raw.csv",
+    "favicon.svg",
+    "index.html",
+    "screenshots/01-overview.png",
+    "screenshots/02-data.png",
+    "screenshots/03-profile.png",
+    "screenshots/04-lab.png",
+    "screenshots/04a-lab-tree.png",
+    "screenshots/04b-lab-regression.png",
+    "screenshots/04c-lab-clustering.png",
+    "screenshots/04d-lab-association.png",
+    "screenshots/05-learning.png",
+    "screenshots/06-career.png",
+    "screenshots/07-governance.png",
+    "screenshots/mobile-overview.png"
+  ]
+}
